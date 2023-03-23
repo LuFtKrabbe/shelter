@@ -1,4 +1,29 @@
+@font-face {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Arial"), url("../../../fonts/arial.woff2") format("woff2"), url("../../../fonts/arial.woff") format("woff"), url("../../../fonts/arial.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Arial"), url("../../../fonts/arial-bold.woff2") format("woff2"), url("../../../fonts/arial-bold.woff") format("woff"), url("../../../fonts/arial-bold.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Georgia"), url("../../../fonts/georgia.woff2") format("woff2"), url("../../../fonts/georgia.woff") format("woff"), url("../../../fonts/georgia.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Georgia"), url("../../../fonts/georgia-bold.woff2") format("woff2"), url("../../../fonts/georgia-bold.woff") format("woff"), url("../../../fonts/georgia-bold.ttf") format("ttf");
+}
 html {
+  font-family: "Arial", sans-serif;
   font-size: 10px;
   scroll-behavior: smooth;
 }
