@@ -46,6 +46,7 @@
     flex-direction: column;
     align-items: center;
     background-color: $color-light-s;
+    border-radius: 9px;
     p {
         font-family: 'Georgia', serif;
         @include font(2.0rem, 115%, 400, normal);

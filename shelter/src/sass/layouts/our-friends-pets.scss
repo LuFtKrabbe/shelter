@@ -1,0 +1,72 @@
+.our-friends-pets {
+    background-color: $color-light-l;
+}
+
+.our-friends-pets-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 40px 0 40px;
+    h2 {
+        margin: 80px 0 45px 0;
+        text-align: center;
+    }
+    .button-type-1 {
+        width: 261px;
+        height: 52px;
+        margin: 60px 0 100px 0;
+    }
+}
+
+.pet-block-card-pets {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.pet-card-pets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $color-light-s;
+    margin: 15px 0 15px 0;
+    border-radius: 9px;
+    p {
+        font-family: 'Georgia', serif;
+        @include font(2.0rem, 115%, 400, normal);
+        color: $color-dark-l;
+        letter-spacing: 0.06em;
+        margin: 30px 0;
+    }
+    button {
+        width: 187px;
+        height: 52px;
+        margin: 0 0 30px 0;
+    }
+}
+
+.switch-block-pets {
+    display: flex;
+    align-items: center;
+    margin: 45px 0 100px 0;
+    button {
+        font-family: 'Georgia', serif;
+        @include font(2.0rem, 115%, 400, normal);
+        margin: 0 10px 0 10px;
+    }
+    button:nth-child(3) {
+        background-color: $color-primary-light;
+        border-color: $color-primary-light;
+    }
+    button:nth-child(1), button:nth-child(2) {
+        margin: 0 10px 0 10px;
+        border-color: $color-dark-s;
+        color: $color-dark-s;
+        pointer-events: none;
+    }
+    button:hover {
+        background-color: $color-primary-light;
+        border-color: $color-primary-light;
+    }
+}
