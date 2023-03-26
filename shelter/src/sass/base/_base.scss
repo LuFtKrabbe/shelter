@@ -3,3 +3,27 @@ html {
     font-size: 10px;
     scroll-behavior: smooth;
 }
+
+body {
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Georgia', serif;
+    @include font(4.4rem, 130%, 400, normal);
+    color: $color-light-xl;
+    margin: 0;
+}
+
+h2 {
+    font-family: 'Georgia', serif;
+    @include font(3.5rem, 130%, 400, normal);
+    color: $color-dark-l;
+    margin: 0;
+    letter-spacing: 0.06em;
+}
+
+.wrapper {
+    max-width: $content-width;
+    margin: auto;
+}

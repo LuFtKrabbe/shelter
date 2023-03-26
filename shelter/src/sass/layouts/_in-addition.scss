@@ -1,0 +1,49 @@
+.in-addition {
+    background-color: $color-light-l;
+}
+
+.in-addition-content {
+    display: flex;
+    align-items: center;
+    margin: 0 40px 0 40px;
+    padding: 80px 142px 100px 142px;
+    div {
+        margin: 0 0 0 30px;
+    }
+    h2 {
+        padding: 0 80px 0 0;
+    }
+    p:nth-child(2) {
+        font-family: 'Georgia', serif;
+        @include font(1.5rem, 110%, 400, normal);
+        color: $color-dark-l;
+        letter-spacing: 0.06em;
+        margin: 18px 0 18px 0;
+    }
+    p:nth-child(3) {
+        display: inline-block; 
+        font-family: 'Georgia', serif;
+        @include font(2.0rem, 115%, 400, normal);
+        color: $color-dark-l;
+        letter-spacing: 0.06em;
+        background-color: $color-primary;
+        border-radius: 9px;
+        padding: 10px 15px;
+        margin: 0 0 0 0;
+        &::before {
+            content: " ";
+            text-align: left;  
+            float: left;
+            background: no-repeat url(../../../img/icons/credit-card.svg); 
+            display: block;  
+            height: 23px;  
+            width: 45px;
+        }
+    }
+    p:nth-child(4) {
+        font-family: 'Georgia', serif;
+        @include font(1.2rem, 150%, 400, normal);
+        color: $color-dark-m;
+        margin: 20px 0 0 0;
+    }
+}

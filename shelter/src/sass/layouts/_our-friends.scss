@@ -1,0 +1,61 @@
+.our-friends {
+    background-color: $color-light-l;
+}
+
+.our-friends-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 40px 0 40px;
+    h2 {
+        margin: 80px 0 60px 0;
+        text-align: center;
+    }
+    .button-type-1 {
+        width: 261px;
+        height: 52px;
+        margin: 60px 0 100px 0;
+    }
+}
+
+.switch-pet-block-card {
+    display: flex;
+    align-items: center;
+    > button:first-child {
+        background: center no-repeat url(../../../img/icons/arrow-left.svg);
+    }
+    > button:last-child {
+        background: center no-repeat url(../../../img/icons/arrow-right.svg);
+    }
+    > button:hover {
+        background-color: $color-primary-light;
+        border-color: $color-primary-light;
+    }
+}
+
+.pet-block-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 990px;
+    margin: 0px 53px;
+}
+
+.pet-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $color-light-s;
+    p {
+        font-family: 'Georgia', serif;
+        @include font(2.0rem, 115%, 400, normal);
+        color: $color-dark-l;
+        letter-spacing: 0.06em;
+        margin: 30px 0;
+    }
+    button {
+        width: 187px;
+        height: 52px;
+        margin: 0 0 30px 0;
+    }
+}

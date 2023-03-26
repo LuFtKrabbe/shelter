@@ -1,0 +1,38 @@
+.button-type-1 {
+    font-family: 'Georgia', serif;
+    @include font(1.7rem, 130%, 400, normal);
+    letter-spacing: 0.06em;
+    color: $color-dark-3xl;
+    border-radius: 100px;
+    border: 0px;
+    background-color: $color-primary;
+    cursor: pointer;
+    &:hover {
+        background-color: $color-primary-light;
+    }
+}
+
+.button-type-2 {
+    font-family: 'Georgia', serif;
+    @include font(1.7rem, 130%, 400, normal);
+    letter-spacing: 0.06em;
+    color: $color-dark-3xl;
+    border-radius: 100px;
+    border: solid 2px $color-primary;
+    background-color: $color-light-xl;
+    cursor: pointer;
+    &:hover {
+        background-color: $color-primary-light;
+        border-color: $color-primary-light;
+    }
+}
+
+.button-type-3 {
+    color: $color-dark-3xl;
+    border-radius: 100px;
+    border: solid 2px $color-primary;
+    background-color: rgba(0, 0, 0, 0);
+    width: 52px;
+    height: 52px;
+    cursor: pointer;
+}

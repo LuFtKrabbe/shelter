@@ -1,0 +1,21 @@
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 40px 0 40px;
+    padding: 80px 175px 100px 175px;
+    h2 {
+        padding: 0 100px 0 0;
+    }
+    div {
+        padding: 0 0 0 120px;
+    }
+    p {
+        @include font(1.5rem, 160%, 400, normal);
+        color: $color-dark-xl;
+        margin: 25px 0 0 0;
+    }
+    img {
+        width: 500px;
+    }
+}
