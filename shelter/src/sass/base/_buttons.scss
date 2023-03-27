@@ -1,4 +1,5 @@
 .button-type-1 {
+    display: inline-flex;
     font-family: 'Georgia', serif;
     @include font(1.7rem, 130%, 400, normal);
     letter-spacing: 0.06em;
@@ -6,7 +7,12 @@
     border-radius: 100px;
     border: 0px;
     background-color: $color-primary;
+    text-decoration: none;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+    @extend %transition;
     &:hover {
         background-color: $color-primary-light;
     }
@@ -21,6 +27,7 @@
     border: solid 2px $color-primary;
     background-color: $color-light-xl;
     cursor: pointer;
+    @extend %transition;
     &:hover {
         background-color: $color-primary-light;
         border-color: $color-primary-light;
@@ -35,4 +42,9 @@
     width: 52px;
     height: 52px;
     cursor: pointer;
+    @extend %transition;
+    &:hover {
+        background-color: $color-primary-light !important;
+        border-color: $color-primary-light !important;
+    }
 }

@@ -11,6 +11,7 @@
     flex-direction: column;
     align-items: center;
     text-decoration: none;
+    @extend %transition;
     p:first-child {
         font-family: 'Georgia', serif;
         @include font(3.2rem, 110%, 400, normal);
@@ -24,6 +25,9 @@
         color: $color-light-xl;
         letter-spacing: 0.1em;
     }
+    &:hover {
+        transform: scale(1.03);
+    }
 }
 
 .header-navigation ul {
@@ -36,6 +40,7 @@
         &:active {
             color: $color-light-s;
             border-bottom: solid 3px $color-primary;
+            transition: none;
         }
         &:first-child {
             border-bottom: solid 3px $color-primary;
@@ -48,6 +53,7 @@
             @include font(1.5rem, 160%, 400, normal);
             text-decoration: none;
             color: $color-dark-s;
+            @extend %transition;
             &:hover {
                 color: $color-light-s;
             }

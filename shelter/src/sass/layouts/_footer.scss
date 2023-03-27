@@ -26,26 +26,35 @@
     h2 {
         margin: 0 0 40px 0;
     }
-    p:nth-child(2) {
+    a {
+        text-decoration: none;
+    }
+    a:nth-child(2) p {
         margin: 0 0 50px 0;
         padding: 0 45px 0 0;
     }
-    p:nth-child(3) {
+    a:nth-child(3) p {
         margin: 0 0 64px 0;
     }
-    p::before {
+    p {
+        @extend %transition;
+        &:hover {
+            transform: translateX(7px);
+        }
+    }
+    a p::before {
         content: " ";
         text-align: left;  
         float: left;
         display: block; 
     }
-    p:nth-child(2)::before {
+    a:nth-child(2) p::before {
         margin-top: -1.5px;
         background: no-repeat url(../../../img/icons/mail.svg); 
         height: 26px;  
         width: 60px;
     }
-    p:nth-child(3)::before {
+    a:nth-child(3) p::before {
         content: " ";
         margin-top: -4.5px;
         background: no-repeat url(../../../img/icons/phone.svg);  
@@ -59,14 +68,23 @@
     h2 {
         margin: 0 0 30px 0;
     }
-    p:nth-child(2) {
+    a {
+        text-decoration: none;
+    }
+    a:nth-child(2) p {
         margin: 0 0 38px 0;
         padding: 0 45px 0 0;
     }
-    p:nth-child(3) {
+    a:nth-child(3) p {
         margin: 0 0 64px 0;
     }
-    p::before {
+    p {
+        @extend %transition;
+        &:hover {
+            transform: translateX(7px);
+        }
+    }
+    a p::before {
         content: " ";
         text-align: left;  
         float: left;
@@ -75,10 +93,10 @@
         height: 32px;  
         width: 42px;
     }
-    p:nth-child(2)::before {
+    a:nth-child(2) p::before {
         margin-top: 7.5px;
     }
-    p:nth-child(3)::before {
+    a:nth-child(3) p::before {
         margin-top: -5px;
     }
 }

@@ -11,6 +11,7 @@
     flex-direction: column;
     align-items: center;
     text-decoration: none;
+    @extend %transition;
     p:first-child {
         font-family: 'Georgia', serif;
         @include font(3.2rem, 3.5rem, 400, normal);
@@ -23,6 +24,9 @@
         margin: 10px 0 0 0; 
         color: $color-dark-3xl;
         letter-spacing: 0.1em;
+    }
+    &:hover {
+        transform: scale(1.03);
     }
 }
 
@@ -48,6 +52,7 @@
             @include font(1.5rem, 160%, 400, normal);
             text-decoration: none;
             color: $color-dark-l;
+            @extend %transition;
             &:hover {
                 color: $color-dark-3xl;
             }

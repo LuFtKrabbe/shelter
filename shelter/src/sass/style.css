@@ -22,6 +22,10 @@
   font-weight: 700;
   src: local("Georgia"), url("../../../fonts/georgia-bold.woff2") format("woff2"), url("../../../fonts/georgia-bold.woff") format("woff"), url("../../../fonts/georgia-bold.ttf") format("ttf");
 }
+.pet-card-pets, .header-pets-navigation ul li a, .header-pets-logo, .address p, .contacts p, .in-addition-content a p, .pet-card, .header-navigation ul li a, .header-logo, .button-type-3, .button-type-2, .button-type-1 {
+  transition: all 300ms ease-in-out;
+}
+
 html {
   font-family: "Arial", sans-serif;
   font-size: 10px;
@@ -59,6 +63,7 @@ h2 {
 }
 
 .button-type-1 {
+  display: inline-flex;
   font-family: "Georgia", serif;
   font-size: 1.7rem;
   line-height: 130%;
@@ -69,6 +74,10 @@ h2 {
   border-radius: 100px;
   border: 0px;
   background-color: #F1CDB3;
+  text-decoration: none;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 .button-type-1:hover {
@@ -101,6 +110,10 @@ h2 {
   width: 52px;
   height: 52px;
   cursor: pointer;
+}
+.button-type-3:hover {
+  background-color: #FDDCC4 !important;
+  border-color: #FDDCC4 !important;
 }
 
 .header-content {
@@ -136,6 +149,9 @@ h2 {
   color: #FFFFFF;
   letter-spacing: 0.1em;
 }
+.header-logo:hover {
+  transform: scale(1.03);
+}
 
 .header-navigation ul {
   display: flex;
@@ -149,6 +165,7 @@ h2 {
 .header-navigation ul li:active {
   color: #FAFAFA;
   border-bottom: solid 3px #F1CDB3;
+  transition: none;
 }
 .header-navigation ul li:first-child {
   border-bottom: solid 3px #F1CDB3;
@@ -200,7 +217,7 @@ h2 {
   padding: 0 40px 0 0;
   margin: 42px 0;
 }
-.not-only-content button {
+.not-only-content a {
   margin: 0 0 80px 0;
   width: 207px;
   height: 52px;
@@ -261,10 +278,6 @@ h2 {
 .switch-pet-block-card > button:last-child {
   background: center no-repeat url(../../../img/icons/arrow-right.svg);
 }
-.switch-pet-block-card > button:hover {
-  background-color: #FDDCC4;
-  border-color: #FDDCC4;
-}
 
 .pet-block-card {
   display: flex;
@@ -295,6 +308,16 @@ h2 {
   width: 187px;
   height: 52px;
   margin: 0 0 30px 0;
+}
+.pet-card:hover {
+  transform: scale(1.05);
+  background-color: #FFFFFF;
+  box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.pet-card:hover button {
+  background-color: #FDDCC4;
+  border-color: #FDDCC4;
 }
 
 .help-content {
@@ -361,7 +384,7 @@ h2 {
   letter-spacing: 0.06em;
   margin: 18px 0 18px 0;
 }
-.in-addition-content p:nth-child(3) {
+.in-addition-content a p {
   display: inline-block;
   font-family: "Georgia", serif;
   font-size: 2rem;
@@ -375,7 +398,11 @@ h2 {
   padding: 10px 15px;
   margin: 0 0 0 0;
 }
-.in-addition-content p:nth-child(3)::before {
+.in-addition-content a p:hover {
+  transform: scale(1.03);
+  box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.2);
+}
+.in-addition-content a p::before {
   content: " ";
   text-align: left;
   float: left;
@@ -423,26 +450,32 @@ h2 {
 .contacts h2 {
   margin: 0 0 40px 0;
 }
-.contacts p:nth-child(2) {
+.contacts a {
+  text-decoration: none;
+}
+.contacts a:nth-child(2) p {
   margin: 0 0 50px 0;
   padding: 0 45px 0 0;
 }
-.contacts p:nth-child(3) {
+.contacts a:nth-child(3) p {
   margin: 0 0 64px 0;
 }
-.contacts p::before {
+.contacts p:hover {
+  transform: translateX(7px);
+}
+.contacts a p::before {
   content: " ";
   text-align: left;
   float: left;
   display: block;
 }
-.contacts p:nth-child(2)::before {
+.contacts a:nth-child(2) p::before {
   margin-top: -1.5px;
   background: no-repeat url(../../../img/icons/mail.svg);
   height: 26px;
   width: 60px;
 }
-.contacts p:nth-child(3)::before {
+.contacts a:nth-child(3) p::before {
   content: " ";
   margin-top: -4.5px;
   background: no-repeat url(../../../img/icons/phone.svg);
@@ -456,14 +489,20 @@ h2 {
 .address h2 {
   margin: 0 0 30px 0;
 }
-.address p:nth-child(2) {
+.address a {
+  text-decoration: none;
+}
+.address a:nth-child(2) p {
   margin: 0 0 38px 0;
   padding: 0 45px 0 0;
 }
-.address p:nth-child(3) {
+.address a:nth-child(3) p {
   margin: 0 0 64px 0;
 }
-.address p::before {
+.address p:hover {
+  transform: translateX(7px);
+}
+.address a p::before {
   content: " ";
   text-align: left;
   float: left;
@@ -472,10 +511,10 @@ h2 {
   height: 32px;
   width: 42px;
 }
-.address p:nth-child(2)::before {
+.address a:nth-child(2) p::before {
   margin-top: 7.5px;
 }
-.address p:nth-child(3)::before {
+.address a:nth-child(3) p::before {
   margin-top: -5px;
 }
 
@@ -511,6 +550,9 @@ h2 {
   margin: 10px 0 0 0;
   color: #292929;
   letter-spacing: 0.1em;
+}
+.header-pets-logo:hover {
+  transform: scale(1.03);
 }
 
 .header-pets-navigation ul {
@@ -555,7 +597,14 @@ h2 {
   align-items: center;
   margin: 0 40px 0 40px;
 }
-.our-friends-pets-content h2 {
+.our-friends-pets-content h1 {
+  font-family: "Georgia", serif;
+  font-size: 3.5rem;
+  line-height: 130%;
+  font-weight: 400;
+  font-style: normal;
+  color: #545454;
+  letter-spacing: 0.06em;
   margin: 80px 0 45px 0;
   text-align: center;
 }
@@ -595,6 +644,16 @@ h2 {
   height: 52px;
   margin: 0 0 30px 0;
 }
+.pet-card-pets:hover {
+  transform: scale(1.05);
+  background-color: #FFFFFF;
+  box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.pet-card-pets:hover button {
+  background-color: #FDDCC4;
+  border-color: #FDDCC4;
+}
 
 .switch-block-pets {
   display: flex;
@@ -610,18 +669,18 @@ h2 {
   margin: 0 10px 0 10px;
 }
 .switch-block-pets button:nth-child(3) {
-  background-color: #FDDCC4;
-  border-color: #FDDCC4;
+  background-color: #F1CDB3;
+  border-color: #F1CDB3;
+}
+.switch-block-pets button:nth-child(3):active {
+  background-color: #F1CDB3 !important;
+  border-color: #F1CDB3 !important;
 }
 .switch-block-pets button:nth-child(1), .switch-block-pets button:nth-child(2) {
   margin: 0 10px 0 10px;
   border-color: #CDCDCD;
   color: #CDCDCD;
   pointer-events: none;
-}
-.switch-block-pets button:hover {
-  background-color: #FDDCC4;
-  border-color: #FDDCC4;
 }
 
 /*# sourceMappingURL=style.css.map */

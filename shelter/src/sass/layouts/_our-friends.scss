@@ -27,10 +27,6 @@
     > button:last-child {
         background: center no-repeat url(../../../img/icons/arrow-right.svg);
     }
-    > button:hover {
-        background-color: $color-primary-light;
-        border-color: $color-primary-light;
-    }
 }
 
 .pet-block-card {
@@ -47,6 +43,7 @@
     align-items: center;
     background-color: $color-light-s;
     border-radius: 9px;
+    @extend %transition;
     p {
         font-family: 'Georgia', serif;
         @include font(2.0rem, 115%, 400, normal);
@@ -58,5 +55,15 @@
         width: 187px;
         height: 52px;
         margin: 0 0 30px 0;
+    }
+    &:hover {
+        transform: scale(1.05);
+        background-color: $color-light-xl;
+        box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+    &:hover button {
+        background-color: $color-primary-light;
+        border-color: $color-primary-light;
     }
 }

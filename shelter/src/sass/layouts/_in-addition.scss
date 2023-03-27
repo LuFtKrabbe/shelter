@@ -20,7 +20,7 @@
         letter-spacing: 0.06em;
         margin: 18px 0 18px 0;
     }
-    p:nth-child(3) {
+    a p {
         display: inline-block; 
         font-family: 'Georgia', serif;
         @include font(2.0rem, 115%, 400, normal);
@@ -30,6 +30,11 @@
         border-radius: 9px;
         padding: 10px 15px;
         margin: 0 0 0 0;
+        @extend %transition;
+        &:hover {
+            transform: scale(1.03);
+            box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.2);
+        }
         &::before {
             content: " ";
             text-align: left;  
