@@ -40,6 +40,7 @@
         &:active {
             color: $color-light-s;
             border-bottom: solid 3px $color-primary;
+            transition: all 100ms ease-in-out;
         }
         &:nth-child(2) {
             border-bottom: solid 3px $color-primary;

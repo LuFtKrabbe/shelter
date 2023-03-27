@@ -165,7 +165,7 @@ h2 {
 .header-navigation ul li:active {
   color: #FAFAFA;
   border-bottom: solid 3px #F1CDB3;
-  transition: none;
+  transition: all 100ms ease-in-out;
 }
 .header-navigation ul li:first-child {
   border-bottom: solid 3px #F1CDB3;
@@ -567,6 +567,7 @@ h2 {
 .header-pets-navigation ul li:active {
   color: #FAFAFA;
   border-bottom: solid 3px #F1CDB3;
+  transition: all 100ms ease-in-out;
 }
 .header-pets-navigation ul li:nth-child(2) {
   border-bottom: solid 3px #F1CDB3;
