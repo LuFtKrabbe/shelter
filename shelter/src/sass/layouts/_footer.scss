@@ -1,5 +1,5 @@
 .footer {
-    background: url(../../../img/noise_transparent@2x.png), 
+    background: url(../../img/noise_transparent@2x.png), 
     radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
 }
 
@@ -50,14 +50,14 @@
     }
     a:nth-child(2) p::before {
         margin-top: -1.5px;
-        background: no-repeat url(../../../img/icons/mail.svg); 
+        background: no-repeat url(../../img/icons/mail.svg); 
         height: 26px;  
         width: 60px;
     }
     a:nth-child(3) p::before {
         content: " ";
         margin-top: -4.5px;
-        background: no-repeat url(../../../img/icons/phone.svg);  
+        background: no-repeat url(../../img/icons/phone.svg);  
         height: 32px;  
         width: 60px;
     }
@@ -89,7 +89,7 @@
         text-align: left;  
         float: left;
         display: block; 
-        background: no-repeat url(../../../img/icons/pin.svg); 
+        background: no-repeat url(../../img/icons/pin.svg); 
         height: 32px;  
         width: 42px;
     }

@@ -190,7 +190,7 @@ h2 {
 }
 
 .not-only {
-  background: url(../../../img/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+  background: url(../../img/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
   margin: -120px 0 0 0;
   padding: 180px 0 0 0;
 }
@@ -273,10 +273,10 @@ h2 {
   align-items: center;
 }
 .switch-pet-block-card > button:first-child {
-  background: center no-repeat url(../../../img/icons/arrow-left.svg);
+  background: center no-repeat url(../../img/icons/arrow-left.svg);
 }
 .switch-pet-block-card > button:last-child {
-  background: center no-repeat url(../../../img/icons/arrow-right.svg);
+  background: center no-repeat url(../../img/icons/arrow-right.svg);
 }
 
 .pet-block-card {
@@ -406,7 +406,7 @@ h2 {
   content: " ";
   text-align: left;
   float: left;
-  background: no-repeat url(../../../img/icons/credit-card.svg);
+  background: no-repeat url(../../img/icons/credit-card.svg);
   display: block;
   height: 23px;
   width: 45px;
@@ -422,7 +422,7 @@ h2 {
 }
 
 .footer {
-  background: url(../../../img/noise_transparent@2x.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
+  background: url(../../img/noise_transparent@2x.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
 }
 
 .footer-content {
@@ -471,14 +471,14 @@ h2 {
 }
 .contacts a:nth-child(2) p::before {
   margin-top: -1.5px;
-  background: no-repeat url(../../../img/icons/mail.svg);
+  background: no-repeat url(../../img/icons/mail.svg);
   height: 26px;
   width: 60px;
 }
 .contacts a:nth-child(3) p::before {
   content: " ";
   margin-top: -4.5px;
-  background: no-repeat url(../../../img/icons/phone.svg);
+  background: no-repeat url(../../img/icons/phone.svg);
   height: 32px;
   width: 60px;
 }
@@ -507,7 +507,7 @@ h2 {
   text-align: left;
   float: left;
   display: block;
-  background: no-repeat url(../../../img/icons/pin.svg);
+  background: no-repeat url(../../img/icons/pin.svg);
   height: 32px;
   width: 42px;
 }
