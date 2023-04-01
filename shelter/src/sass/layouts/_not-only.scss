@@ -3,6 +3,9 @@
     radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
     margin: -120px 0 0 0;
     padding: 180px 0 0 0;
+    @include media-laptop {
+        padding: 150px 0 0 0;
+    }
 }
 
 .not-only-content {
@@ -10,22 +13,58 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 40px 0 40px;
-    min-height: 728px;
-    img {
-        max-width: 100%;
+    @include media-laptop {
+        flex-direction: column;
     }
-    h1 {
-        padding: 0 150px 0 0;
+    @include media-tablet {
+        margin: 0 30px 0 30px; 
+    }
+    @include media-mobile-XL {
+        margin: 0 10px 0 10px;
+    }
+    img {
+        align-self: flex-end;
+        max-width: 60%;
+        @include media-laptop {
+            max-width: 80.4%;
+        }
+        @include media-less-tablet {
+            max-width: 87%;
+        }
+    }
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 65%;
+        @include media-mobile-XL {
+            align-items: center;
+            max-width: 100%;
+        }
     }
     p {
         @include font(1.5rem, 160%, 400, normal);
         color: $color-dark-s;
         padding: 0 40px 0 0;
-        margin: 42px 0;
+        margin: 41px 0;
+        @include media-laptop {
+            padding: 0 0 0 0;
+            text-align: justify; 
+        }
+        @include media-mobile-XL {
+            text-align: center; 
+        }
     }
     a {
         margin: 0 0 80px 0;
         width: 207px;
         height: 52px;
+        @include media-laptop {
+            align-self: center;
+            margin: 0 0 100px 0;
+        }
+        @include media-mobile-XL {
+            margin: 0 0 105px 0;
+        }
     }
 }

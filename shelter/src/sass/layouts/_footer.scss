@@ -8,11 +8,20 @@
     align-items: center;
     justify-content: space-between;
     align-items: flex-end;
+    flex-wrap: wrap;
     margin: 0 40px 0 40px;
     padding: 40px 0 0 0;
+    @include media-laptop {
+        justify-content: space-around;
+        margin: 0 30px 0 30px; 
+        padding: 30px 0 0 0;
+    }
+    @include media-mobile-XL {
+        margin: 0 10px 0 10px; 
+    }
     h2 {
         color: $color-light-xl;
-        padding: 0 140px 0 0;
+        padding: 0 0 0 0;
     }
     p {
         font-family: 'Georgia', serif;
@@ -20,21 +29,44 @@
         color: $color-primary;
         letter-spacing: 0.06em;
     }
+    img {
+        @include media-laptop {
+            margin: 0 30px 0 30px; 
+        }
+        @include media-mobile-XL {
+            max-width: 87%;
+        }
+    }
 }
 
 .contacts {
+    max-width: 280px;
+    @include media-mobile-XL {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     h2 {
         margin: 0 0 40px 0;
+        @include media-mobile-XL {
+            margin: 0 0 45px 0; 
+        }
     }
     a {
         text-decoration: none;
     }
     a:nth-child(2) p {
         margin: 0 0 50px 0;
-        padding: 0 45px 0 0;
+        padding: 0 0 0 0;
     }
     a:nth-child(3) p {
         margin: 0 0 64px 0;
+        @include media-tablet {
+            margin: 0 0 70px 0; 
+        }
+        @include media-mobile-XL {
+            margin: 0 0 42px 0; 
+        }
     }
     p {
         @extend %transition;
@@ -64,19 +96,33 @@
 }
 
 .address {
-    padding: 0 45px 0 0;
+    max-width: 310px;
+    padding: 0 0 0 0;
     h2 {
         margin: 0 0 30px 0;
+        @include media-mobile-XL {
+            width: 280px;
+            margin: 0 auto 40px auto;
+        }
     }
     a {
         text-decoration: none;
     }
     a:nth-child(2) p {
         margin: 0 0 38px 0;
-        padding: 0 45px 0 0;
+        padding: 0 0 0 0;
+        @include media-mobile-XL {
+            margin: 0 0 42px 0;
+        }
     }
     a:nth-child(3) p {
         margin: 0 0 64px 0;
+        @include media-tablet {
+            margin: 0 0 70px 0; 
+        }
+        @include media-mobile-XL {
+            margin: 0 0 48px 0;
+        }
     }
     p {
         @extend %transition;
