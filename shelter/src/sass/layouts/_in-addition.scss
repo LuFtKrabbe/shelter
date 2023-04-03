@@ -4,21 +4,62 @@
 
 .in-addition-content {
     display: flex;
+    justify-content: center;
     align-items: center;
     margin: 0 40px 0 40px;
-    padding: 80px 142px 100px 142px;
+    padding: 80px 0 100px 0;
+    @include media-laptop {
+        margin: 0 30px 0 30px; 
+    }
+    @include media-tablet {
+        flex-direction: column; 
+    }
+    @include media-mobile-XL { 
+        margin: 0 20px 0 20px;
+        padding: 42px 0 42px 0;
+    }
+    img {
+        max-width: 45%;
+        @include media-tablet {
+            margin: 60px 0 0 0; 
+            max-width: 505px;
+            order: 1;
+        }
+        @include media-mobile-XL {
+            margin: 42px 0 0 0; 
+            max-width: 93%;
+        }
+    }
     div {
         margin: 0 0 0 30px;
+        max-width: 380px;
+        @include media-laptop {
+            margin: 0 0 0 30px; 
+        }
+        @include media-tablet {
+            margin: 0 0 0 0;
+        }
+        @include media-mobile-XL { 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 100%;
+        }
     }
     h2 {
-        padding: 0 80px 0 0;
+        padding: 0 0 0 0;
     }
     p:nth-child(2) {
         font-family: 'Georgia', serif;
         @include font(1.5rem, 110%, 400, normal);
         color: $color-dark-l;
         letter-spacing: 0.06em;
-        margin: 18px 0 18px 0;
+        margin: 19px 0 18px 0;
+        @include media-mobile-XL { 
+            @include font(1.5rem, 160%, 400, normal); 
+            margin: 20px 0 20px 0;
+            letter-spacing: 0em;
+        }
     }
     a p {
         display: inline-block; 
@@ -28,9 +69,13 @@
         letter-spacing: 0.06em;
         background-color: $color-primary;
         border-radius: 9px;
-        padding: 10px 15px;
+        padding: 10px 15px 10px 15px;
         margin: 0 0 0 0;
         @extend %transition;
+        @include media-mobile-XL { 
+            @include font(1.5rem, 110%, 400, normal);
+            padding: 15px 14px 9px 14px;
+        }
         &:hover {
             transform: scale(1.03);
             box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.2);
@@ -43,6 +88,9 @@
             display: block;  
             height: 23px;  
             width: 45px;
+            @include media-mobile-XL { 
+                margin-top: -2px;
+            }
         }
     }
     p:nth-child(4) {
@@ -50,5 +98,8 @@
         @include font(1.2rem, 150%, 400, normal);
         color: $color-dark-m;
         margin: 20px 0 0 0;
+        @include media-mobile-XL { 
+            text-align: justify;
+        }
     }
 }

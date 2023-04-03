@@ -13,6 +13,12 @@ h1 {
     @include font(4.4rem, 130%, 400, normal);
     color: $color-light-xl;
     margin: 0;
+    padding: 0;
+    @include media-mobile-XL {
+        @include font(2.5rem, 130%, 400, normal);
+        text-align: center;
+        letter-spacing: 0.06em;
+    }
 }
 
 h2 {
@@ -21,6 +27,10 @@ h2 {
     color: $color-dark-l;
     margin: 0;
     letter-spacing: 0.06em;
+    @include media-mobile-XL {
+        @include font(2.5rem, 130%, 400, normal);
+        text-align: center;
+    }
 }
 
 .wrapper {
