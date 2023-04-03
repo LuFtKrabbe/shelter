@@ -1,9 +1,16 @@
 .header-pets-content {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 60px;
     margin: 0 40px 0 40px;
     padding: 30px 0 30px 0;
+    @include media-laptop {
+        margin: 0 30px 0 30px; 
+    }
+    @include media-mobile-XL {
+        margin: 0 20px 0 20px; 
+    }
 }
 
 .header-pets-logo {
@@ -14,7 +21,7 @@
     @extend %transition;
     p:first-child {
         font-family: 'Georgia', serif;
-        @include font(3.2rem, 3.5rem, 400, normal);
+        @include font(3.2rem, 110%, 400, normal);
         margin: 0;
         color: $color-dark-l;
         letter-spacing: 0.06em;
@@ -35,12 +42,19 @@
     justify-content: space-between;
     list-style: none;
     margin: 16px 0 16px 0;
+    padding: 0 0 0 0;
+    @include media-less-tablet {
+        display: none;
+    }
     li {
         margin: 0 0 0 36px;
         &:active {
             color: $color-light-s;
             border-bottom: solid 3px $color-primary;
             transition: all 100ms ease-in-out;
+        }
+        &:first-child {
+            margin: 0 0 0 0;
         }
         &:nth-child(2) {
             border-bottom: solid 3px $color-primary;
@@ -57,6 +71,28 @@
             &:hover {
                 color: $color-dark-3xl;
             }
+            &:active {
+                color: $color-dark-l;
+            }
         }
+    }
+}
+
+.header-hamburger {
+    z-index: 1;
+    display: none;
+    width: 30px;
+    height: 22px;
+    @extend %transition;
+    @include media-less-tablet {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        cursor: pointer;
+    }
+    .header-hamburger-line {
+    background-color: $color-dark-4xl;
+    width: 30px;
+    height: 2px;
     }
 }
