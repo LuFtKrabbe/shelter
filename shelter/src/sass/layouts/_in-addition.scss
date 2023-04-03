@@ -54,9 +54,10 @@
         @include font(1.5rem, 110%, 400, normal);
         color: $color-dark-l;
         letter-spacing: 0.06em;
-        margin: 21px 0 18px 0;
+        margin: 19px 0 18px 0;
         @include media-mobile-XL { 
             @include font(1.5rem, 160%, 400, normal); 
+            margin: 20px 0 20px 0;
             letter-spacing: 0em;
         }
     }

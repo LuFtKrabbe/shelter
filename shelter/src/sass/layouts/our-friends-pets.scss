@@ -37,7 +37,7 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 42px 20px 0 20px;
+    padding: 44px 20px 0 20px;
     max-height: 1395px;
     overflow-y: hidden;
     @include media-laptop {
@@ -93,7 +93,6 @@
     button {
         font-family: 'Georgia', serif;
         @include font(2.0rem, 115%, 400, normal);
-        //margin: 0 10px 0 10px;
     }
     button:nth-child(3) {
         background-color: $color-primary;
