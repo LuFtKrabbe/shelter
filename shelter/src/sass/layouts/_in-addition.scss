@@ -26,8 +26,8 @@
             order: 1;
         }
         @include media-mobile-XL {
-            margin: 43px 0 0 0; 
-            max-width: 92%;
+            margin: 42px 0 0 0; 
+            max-width: 93%;
         }
     }
     div {
@@ -54,7 +54,7 @@
         @include font(1.5rem, 110%, 400, normal);
         color: $color-dark-l;
         letter-spacing: 0.06em;
-        margin: 18px 0 18px 0;
+        margin: 21px 0 18px 0;
         @include media-mobile-XL { 
             @include font(1.5rem, 160%, 400, normal); 
             letter-spacing: 0em;
