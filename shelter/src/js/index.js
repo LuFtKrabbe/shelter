@@ -10,3 +10,22 @@ console.log (
 	- [x] Valid Layout: document's checking is completed (8/8).
 	`
 );
+
+function dropHamburgerMenu() {
+	document.querySelector(".header-hamburger").classList.toggle("rotate-header-hamburger");
+	document.querySelector(".header-navigation").classList.toggle("header-navigation-show");
+	document.querySelector(".header-overlay").classList.toggle("header-overlay-show");
+	document.querySelector(".scroll").classList.toggle("no-scroll");
+}
+
+window.onclick = function(event) {
+    if (event.target.matches('.header-overlay') && window.innerWidth <= 750) {
+        dropHamburgerMenu();
+    }
+    if (event.target.matches('.header-navigation ul li a') && window.innerWidth <= 750) {
+        dropHamburgerMenu();
+    }
+}
+
+let proba = document.getElementsByClassName("header-hamburger")[0];
+console.log(proba);

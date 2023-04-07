@@ -37,3 +37,8 @@ h2 {
     max-width: $content-width;
     margin: auto;
 }
+
+.no-scroll {
+    position: fixed;
+    width: 100%;
+}

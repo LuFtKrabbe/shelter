@@ -37,6 +37,22 @@
     }
 }
 
+.header-navigation {
+    @include media-less-tablet {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 0px;
+        z-index: 1;
+        background-color: $color-dark-3xl;
+        transition: all 500ms ease-in-out;
+    }
+}
+
 .header-navigation ul {
     display: flex;
     justify-content: space-between;
@@ -44,10 +60,17 @@
     margin: 16px 0 16px 0;
     padding: 0 0 0 0;
     @include media-less-tablet {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 0 0 0;
+        overflow: hidden;
     }
     li {
         margin: 0 0 0 36px;
+        @include media-less-tablet {
+            margin: 40px 0 40px 0;
+        }
         &:active {
             color: $color-light-s;
             border-bottom: solid 3px $color-primary;
@@ -56,12 +79,16 @@
         &:first-child {
             margin: 0 0 0 0;
             border-bottom: solid 3px $color-primary;
+            @include media-less-tablet {
+                margin: 40px 0 40px 0;
+            }
         }
         &:first-child a {
             color: $color-light-s;
             pointer-events: none;
         }
         a {
+            white-space: nowrap;
             @include font(1.5rem, 160%, 400, normal);
             text-decoration: none;
             color: $color-dark-s;
@@ -72,25 +99,61 @@
             &:active {
                 color: $color-light-s;
             }
+            @include media-less-tablet {
+                @include font(3.2rem, 160%, 400, normal);
+                transition: all 0ms ease-in-out;
+            }
+        }
+    }
+}
+
+.header-navigation-show {
+    @include media-less-tablet {
+        transition: all 500ms ease-in-out;
+        width: 320px;
+    }
+    ul {
+        @include media-less-tablet {
+            display: flex;
         }
     }
 }
 
 .header-hamburger {
-    z-index: 1;
     display: none;
+    justify-content: space-between;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1;
     width: 30px;
     height: 22px;
     @extend %transition;
     @include media-less-tablet {
         display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        cursor: pointer;
     }
     .header-hamburger-line {
     background-color: $color-primary;
     width: 30px;
     height: 2px;
     }
+}
+
+.rotate-header-hamburger {
+    transform: rotate(90deg);
+}
+
+.header-overlay {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    z-index: 1;
+    background-color: rgba(38, 18, 0, 0.555);
+    @extend %transition-slow;
+}
+
+.header-overlay-show {
+    width: 100%;
+    @extend %transition-slow;
 }
