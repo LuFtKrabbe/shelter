@@ -48,7 +48,7 @@
         height: 100%;
         width: 0px;
         z-index: 1;
-        background-color: $color-dark-3xl;
+        background-color: $color-menu-dark;
         transition: all 500ms ease-in-out;
     }
 }
@@ -85,7 +85,7 @@
         }
         &:first-child a {
             color: $color-light-s;
-            pointer-events: none;
+            cursor: none;
         }
         a {
             white-space: nowrap;
@@ -149,7 +149,7 @@
     height: 100%;
     width: 0%;
     z-index: 1;
-    background-color: rgba(38, 18, 0, 0.555);
+    background-color: $color-menu-curtain;
     @extend %transition-slow;
 }
 
