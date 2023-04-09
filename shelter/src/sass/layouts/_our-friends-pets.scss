@@ -40,6 +40,7 @@
     padding: 44px 20px 0 20px;
     max-height: 1395px;
     overflow-y: hidden;
+    column-gap: 14px;
     @include media-laptop {
         padding: 14px 25px 0 25px;
         justify-content: space-evenly; 
@@ -103,9 +104,12 @@
         }
     }
     button:nth-child(1), button:nth-child(2) {
-        margin: 0 0px 0 0px;
-        border-color: $color-dark-s;
-        color: $color-dark-s;
-        pointer-events: none;
+        margin: 0 0 0 0;
     }
+}
+
+.not-active {
+    border-color: $color-dark-s;
+    color: $color-dark-s;
+    pointer-events: none;
 }

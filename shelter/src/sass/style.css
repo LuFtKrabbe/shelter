@@ -1323,6 +1323,7 @@ h2 {
   padding: 44px 20px 0 20px;
   max-height: 1395px;
   overflow-y: hidden;
+  column-gap: 14px;
 }
 @media (max-width: 1024px) {
   .pet-block-card-pets {
@@ -1398,7 +1399,10 @@ h2 {
   border-color: #F1CDB3 !important;
 }
 .switch-block-pets button:nth-child(1), .switch-block-pets button:nth-child(2) {
-  margin: 0 0px 0 0px;
+  margin: 0 0 0 0;
+}
+
+.not-active {
   border-color: #CDCDCD;
   color: #CDCDCD;
   pointer-events: none;
