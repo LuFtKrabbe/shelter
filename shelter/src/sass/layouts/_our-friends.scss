@@ -11,7 +11,7 @@
         margin: 0 30px 0 30px; 
     }
     @include media-mobile-XL {
-        margin: 0 10px 0 10px; 
+        margin: 0 10px 0 10px;
     }
     h2 {
         margin: 80px 0 20px 0;
@@ -62,25 +62,43 @@
     }
 }
 
+.pet-block-card-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    width: 82.5%;
+    overflow-x: hidden;
+    @include media-less-tablet {
+        width: 100%;
+        order: -1;
+    }
+}
+
 .pet-block-card {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 0 0 0;
+    min-width: 100%;
+    @include media-less-tablet {
+        width: 100%;
+    }
+}
+
+.pet-slide {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    width: 82.5%;
-    height: 435px;
-    padding: 40px 20px 40px 20px;
     overflow-y: hidden;
-    @include media-laptop {
-        padding: 40px 12px 40px 12px; 
-    }
+    height: 435px;
+    min-width: 100%;
+    column-gap: 14px;
     @include media-less-tablet {
         justify-content: space-around;
-        width: 100%;
-        order: -1;
-    }
-    @include media-mobile-XL {
-        padding: 40px 10px 20px 10px;
     }
 }
 
@@ -89,7 +107,7 @@
     flex-direction: column;
     align-items: center;
     background-color: $color-light-s;
-    margin: 0 0 40px 0;
+    margin: 0 0 0 0;
     border-radius: 9px;
     @extend %transition;
     p {
@@ -97,7 +115,7 @@
         @include font(2.0rem, 115%, 400, normal);
         color: $color-dark-l;
         letter-spacing: 0.06em;
-        margin: 30px 0;
+        margin: 30px 0 30px 0;
     }
     button {
         width: 187px;
@@ -105,13 +123,19 @@
         margin: 0 0 30px 0;
     }
     &:hover {
-        transform: scale(1.02);
         background-color: $color-light-xl;
-        box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.2);
         cursor: pointer;
     }
     &:hover button {
         background-color: $color-primary-light;
         border-color: $color-primary-light;
     }
+}
+
+.transition-left {
+    animation: move-left 2s;
+}
+
+.transition-right {
+    animation: move-right 2s;
 }

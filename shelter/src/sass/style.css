@@ -30,6 +30,22 @@
   transition: all 500ms ease-in-out;
 }
 
+@keyframes move-left {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 100%;
+  }
+}
+@keyframes move-right {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -100%;
+  }
+}
 html {
   font-family: "Arial", sans-serif;
   font-size: 10px;
@@ -579,31 +595,49 @@ h2 {
   }
 }
 
-.pet-block-card {
+.pet-block-card-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: center;
   width: 82.5%;
-  height: 435px;
-  padding: 40px 20px 40px 20px;
-  overflow-y: hidden;
-}
-@media (max-width: 1024px) {
-  .pet-block-card {
-    padding: 40px 12px 40px 12px;
-  }
+  overflow-x: hidden;
 }
 @media (max-width: 767px) {
-  .pet-block-card {
-    justify-content: space-around;
+  .pet-block-card-wrapper {
     width: 100%;
     order: -1;
   }
 }
-@media (max-width: 550px) {
+
+.pet-block-card {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 0 0 0;
+  min-width: 100%;
+}
+@media (max-width: 767px) {
   .pet-block-card {
-    padding: 40px 10px 20px 10px;
+    width: 100%;
+  }
+}
+
+.pet-slide {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  overflow-y: hidden;
+  height: 435px;
+  min-width: 100%;
+  column-gap: 14px;
+}
+@media (max-width: 767px) {
+  .pet-slide {
+    justify-content: space-around;
   }
 }
 
@@ -612,7 +646,7 @@ h2 {
   flex-direction: column;
   align-items: center;
   background-color: #FAFAFA;
-  margin: 0 0 40px 0;
+  margin: 0 0 0 0;
   border-radius: 9px;
 }
 .pet-card p {
@@ -623,7 +657,7 @@ h2 {
   font-style: normal;
   color: #545454;
   letter-spacing: 0.06em;
-  margin: 30px 0;
+  margin: 30px 0 30px 0;
 }
 .pet-card button {
   width: 187px;
@@ -631,14 +665,20 @@ h2 {
   margin: 0 0 30px 0;
 }
 .pet-card:hover {
-  transform: scale(1.02);
   background-color: #FFFFFF;
-  box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 .pet-card:hover button {
   background-color: #FDDCC4;
   border-color: #FDDCC4;
+}
+
+.transition-left {
+  animation: move-left 2s;
+}
+
+.transition-right {
+  animation: move-right 2s;
 }
 
 .help-content {
