@@ -1,7 +1,7 @@
 console.log (
 	`
 	Self-estimation of work:\n
-	Score: 100 / 100\n
+	Score: 110 / 110\n
 	- [x] The burger-menu is realized on the both pages (26/26);
 	- [x] The carousel slider is realized on the both pages (36/36);
 	- [x] The pagination is completely realized (36/36);
@@ -166,8 +166,6 @@ BARABAN.addEventListener("animationend", (animationEvent) => {
 
 		refreshLeftPetsKeys();
 
-		console.log(petsKeys);
-
 		createLeftPetSlide(data);
 		createCenterPetSlide(data);
 		createRightPetSlide(data);
@@ -181,8 +179,6 @@ BARABAN.addEventListener("animationend", (animationEvent) => {
 		document.querySelector("#right-pet-slide").remove();
 
 		refreshRightPetsKeys();
-
-		console.log(petsKeys);
 
 		createLeftPetSlide(data);
 		createCenterPetSlide(data);
