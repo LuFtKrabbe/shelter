@@ -18,15 +18,6 @@ function dropHamburgerMenu() {
 	document.querySelector(".scroll").classList.toggle("no-scroll");
 }
 
-window.onclick = function(event) {
-    if (event.target.matches('.header-overlay') && window.innerWidth <= 750) {
-        dropHamburgerMenu();
-    }
-    if (event.target.matches('.header-navigation ul li a') && window.innerWidth <= 750) {
-        dropHamburgerMenu();
-    }
-}
-
 const ARROW_LEFT = document.querySelector("#arrow-left");
 const BARABAN = document.querySelector("#karusel");
 const ARROW_RIGHT = document.querySelector("#arrow-right");
@@ -84,6 +75,7 @@ async function getPets() {
 	createLeftPetSlide(data);
 	createCenterPetSlide(data);
 	createRightPetSlide(data);
+	createPopUp(data);
 }
 
 getPets();
@@ -100,6 +92,11 @@ function createPetCard(data, petsKey) {
 
 	petCard.classList.add("pet-card");
 	button.classList.add("button-type-2");
+
+	petCard.setAttribute("id", `${petsKey}`);
+	img.setAttribute("id", `${petsKey}`);
+	p.setAttribute("id", `${petsKey}`);
+	button.setAttribute("id", `${petsKey}`);
 
 	img.src = data[petsKey].img;
 	img.alt = data[petsKey].name;
@@ -198,3 +195,55 @@ BARABAN.addEventListener("animationend", (animationEvent) => {
 
 ARROW_LEFT.addEventListener("click", moveLeft);
 ARROW_RIGHT.addEventListener("click", moveRight);
+
+function showPopUpModal() {
+	document.querySelector(".scroll").classList.toggle("no-scroll");
+	document.querySelector(".pop-up-overlay").classList.toggle("pop-up-overlay-show");
+	document.querySelector(".pop-up-modal").classList.toggle("pop-up-modal-show");
+}
+
+const POP_UP = document.querySelector("#pop-up-modal");
+let petsKeyPop = 0;
+
+function createPopUp(data) {
+	while (POP_UP.firstChild) {POP_UP.firstChild.remove()};
+	POP_UP.innerHTML = 
+	`
+	<button class="button-type-3" id="pop-up-close"></button>
+	<img src="${data[petsKeyPop].img}" alt="${data[petsKeyPop].name}">
+	<div class="pop-up-content" id="pop-up-content">
+		<h2>${data[petsKeyPop].name}</h2>
+		<h3>${data[petsKeyPop].type} - ${data[petsKeyPop].breed}</h3>
+		<p>
+			${data[petsKeyPop].description}
+		</p>
+		<ul>
+			<li><span>Age:</span> ${data[petsKeyPop].age}</li>
+			<li><span>Inoculations:</span> ${data[petsKeyPop].inoculations}</li>
+			<li><span>Diseases:</span> ${data[petsKeyPop].diseases}</li>
+			<li><span>Parasites:</span> ${data[petsKeyPop].parasites}</li>
+		</ul>
+	</div>
+	`
+};
+
+BARABAN.addEventListener('click', (event) => {
+	if (event.target.matches('.pet-card') || event.target.matches('button') ||
+	 	event.target.matches('img') || event.target.matches('p')) {
+		petsKeyPop = event.target.id;
+		createPopUp(data);
+		showPopUpModal();
+	}
+})
+
+window.onclick = function(event) {
+	if (event.target.matches('.header-overlay') && window.innerWidth <= 750) {
+        dropHamburgerMenu();
+    }
+    if (event.target.matches('.header-navigation ul li a') && window.innerWidth <= 750) {
+        dropHamburgerMenu();
+    }
+	if (event.target.matches(".pop-up-overlay-show") || event.target.matches("#pop-up-close")) {
+        showPopUpModal();
+    }
+}

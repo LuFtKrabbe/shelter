@@ -33,12 +33,23 @@ h2 {
     }
 }
 
+h3 {
+    font-family: 'Georgia', serif;
+    @include font(2.0rem, 115%, 400, normal);
+    color: $color-dark-4xl;
+    margin: 0;
+    letter-spacing: 0.06em;
+    @include media-mobile-XL {
+        @include font(2.5rem, 130%, 400, normal);
+        text-align: center;
+    }
+}
+
 .wrapper {
     max-width: $content-width;
     margin: auto;
 }
 
 .no-scroll {
-    position: fixed;
-    width: 100%;
+    overflow-y: hidden;
 }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Arial";
   font-style: normal;
@@ -22,7 +23,7 @@
   font-weight: 700;
   src: local("Georgia"), url("../../fonts/georgia-bold.woff2") format("woff2"), url("../../fonts/georgia-bold.woff") format("woff"), url("../../fonts/georgia-bold.ttf") format("ttf");
 }
-.pet-card-pets, .header-pets-hamburger, .header-pets-navigation ul li a, .header-pets-logo, .address p, .contacts p, .in-addition-content a p, .pet-card, .header-hamburger, .header-navigation ul li a, .header-logo, .button-type-3, .button-type-2, .button-type-1 {
+.pet-card-pets, .header-pets-hamburger, .header-pets-navigation ul li a, .header-pets-logo, .address p, .contacts p, .in-addition-content a p, .pet-card, .pop-up-modal-show, .pop-up-modal, .pop-up-overlay-show, .pop-up-overlay, .header-hamburger, .header-navigation ul li a, .header-logo, .button-type-3, .button-type-2, .button-type-1 {
   transition: all 300ms ease-in-out;
 }
 
@@ -97,14 +98,33 @@ h2 {
   }
 }
 
+h3 {
+  font-family: "Georgia", serif;
+  font-size: 2rem;
+  line-height: 115%;
+  font-weight: 400;
+  font-style: normal;
+  color: #000000;
+  margin: 0;
+  letter-spacing: 0.06em;
+}
+@media (max-width: 550px) {
+  h3 {
+    font-size: 2.5rem;
+    line-height: 130%;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+  }
+}
+
 .wrapper {
   max-width: 1280px;
   margin: auto;
 }
 
 .no-scroll {
-  position: fixed;
-  width: 100%;
+  overflow-y: hidden;
 }
 
 .button-type-1 {
@@ -514,6 +534,173 @@ h2 {
     max-width: 260px;
     margin: 40px 0 0 0;
   }
+}
+
+.pop-up-overlay {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(41, 41, 41, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 0;
+}
+
+.pop-up-overlay-show {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1000;
+}
+
+.pop-up-modal {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  opacity: 0;
+  width: 900px;
+  min-height: 500px;
+  background-color: #FAFAFA;
+  border-radius: 9px;
+  z-index: 1;
+}
+@media (max-width: 1024px) {
+  .pop-up-modal {
+    width: 630px;
+    min-height: 350px;
+  }
+}
+@media (max-width: 767px) {
+  .pop-up-modal {
+    width: 240px;
+    min-height: 340px;
+  }
+}
+.pop-up-modal .button-type-3 {
+  background: center no-repeat url(../../img/icons/cross.svg);
+  position: absolute;
+  right: -42px;
+  top: -52px;
+  z-index: 1;
+}
+@media (max-width: 767px) {
+  .pop-up-modal .button-type-3 {
+    right: -32px;
+  }
+}
+.pop-up-modal img {
+  overflow: hidden;
+  height: 100%;
+  min-width: 500px;
+  border-radius: 9px;
+}
+@media (max-width: 1024px) {
+  .pop-up-modal img {
+    min-width: 350px;
+  }
+}
+@media (max-width: 767px) {
+  .pop-up-modal img {
+    display: none;
+    right: -32px;
+  }
+}
+
+.pop-up-modal-show {
+  opacity: 1;
+}
+
+.pop-up-content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 50px 20px 0 30px;
+}
+@media (max-width: 1024px) {
+  .pop-up-content {
+    padding: 10px 10px 0 10px;
+  }
+}
+.pop-up-content h2 {
+  font-family: "Georgia", serif;
+  font-size: 3.5rem;
+  line-height: 130%;
+  font-weight: 400;
+  font-style: normal;
+  color: #000000;
+}
+@media (max-width: 767px) {
+  .pop-up-content h2 {
+    text-align: center;
+  }
+}
+.pop-up-content h3 {
+  margin: 10px 0 0 0;
+}
+@media (max-width: 767px) {
+  .pop-up-content h3 {
+    text-align: center;
+  }
+}
+.pop-up-content p {
+  font-family: "Georgia", serif;
+  font-size: 1.5rem;
+  line-height: 110%;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.06em;
+  margin: 40px 0 40px 0;
+}
+@media (max-width: 1024px) {
+  .pop-up-content p {
+    font-size: 1.3rem;
+    line-height: 110%;
+    font-weight: 400;
+    font-style: normal;
+    margin: 20px 0 20px 0;
+  }
+}
+@media (max-width: 767px) {
+  .pop-up-content p {
+    text-align: justify;
+    margin: 20px 0 24px 0;
+  }
+}
+.pop-up-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pop-up-content ul li {
+  font-family: "Georgia", serif;
+  font-size: 1.5rem;
+  line-height: 110%;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.06em;
+  margin: 0 0 11px 0;
+}
+@media (max-width: 1024px) {
+  .pop-up-content ul li {
+    margin: 0 0 6px 0;
+  }
+}
+.pop-up-content ul li span {
+  font-size: 1.5rem;
+  line-height: 110%;
+  font-weight: 700;
+  font-style: normal;
+}
+.pop-up-content ul li::before {
+  content: "•";
+  color: #F1CDB3;
+  font-weight: bold;
+  display: inline-block;
+  width: 2rem;
 }
 
 .our-friends {

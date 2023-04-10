@@ -5,15 +5,6 @@ function dropHamburgerMenuPets() {
 	document.querySelector(".scroll-pets").classList.toggle("no-scroll");
 }
 
-window.onclick = function(event) {
-	if (event.target.matches('.header-pets-overlay') && window.innerWidth <= 750) {
-        dropHamburgerMenuPets();
-    }
-    if (event.target.matches('.header-pets-navigation ul li a') && window.innerWidth <= 750) {
-        dropHamburgerMenuPets();
-    }
-}
-
 const PET_BLOCK = document.querySelector("#pet-block");
 
 const DOUBLE_ARROW_LEFT = document.querySelector("#double-arrow-left");
@@ -94,6 +85,7 @@ async function getPets() {
 	let response = await fetch('src/js/pets.json');
 	data = await response.json();
 	createCards(data);
+    createPopUp(data);
 }
 
 function createCards(data) {
@@ -106,7 +98,6 @@ function createCards(data) {
         let petCard = createPetCard(data, currentPetsKeys[i]);
         PET_BLOCK.appendChild(petCard);
     }
-    console.log(currentPage);
 };
 
 function createPetCard(data, petsKey) {
@@ -121,6 +112,11 @@ function createPetCard(data, petsKey) {
 
 	petCard.classList.add("pet-card-pets");
 	button.classList.add("button-type-2");
+
+    petCard.setAttribute("id", `${petsKey}`);
+	img.setAttribute("id", `${petsKey}`);
+	p.setAttribute("id", `${petsKey}`);
+	button.setAttribute("id", `${petsKey}`);
 
 	img.src = data[petsKey].img;
 	img.alt = data[petsKey].name;
@@ -163,6 +159,61 @@ ARROW_RIGHT.addEventListener("click", moveCards);
 DOUBLE_ARROW_RIGHT.addEventListener("click", moveCards);
 
 console.log(petsKeys);
-console.log(currentPetsKeys);
 
 window.addEventListener('resize', getPets);
+
+
+
+
+
+function showPopUpModal() {
+	document.querySelector(".scroll-pets").classList.toggle("no-scroll");
+	document.querySelector(".pop-up-overlay").classList.toggle("pop-up-overlay-show");
+	document.querySelector(".pop-up-modal").classList.toggle("pop-up-modal-show");
+}
+
+const POP_UP = document.querySelector("#pop-up-modal");
+let petsKeyPop = 0;
+
+function createPopUp(data) {
+	while (POP_UP.firstChild) {POP_UP.firstChild.remove()};
+	POP_UP.innerHTML = 
+	`
+	<button class="button-type-3" id="pop-up-close"></button>
+	<img src="${data[petsKeyPop].img}" alt="${data[petsKeyPop].name}">
+	<div class="pop-up-content" id="pop-up-content">
+		<h2>${data[petsKeyPop].name}</h2>
+		<h3>${data[petsKeyPop].type} - ${data[petsKeyPop].breed}</h3>
+		<p>
+			${data[petsKeyPop].description}
+		</p>
+		<ul>
+			<li><span>Age:</span> ${data[petsKeyPop].age}</li>
+			<li><span>Inoculations:</span> ${data[petsKeyPop].inoculations}</li>
+			<li><span>Diseases:</span> ${data[petsKeyPop].diseases}</li>
+			<li><span>Parasites:</span> ${data[petsKeyPop].parasites}</li>
+		</ul>
+	</div>
+	`
+};
+
+PET_BLOCK.addEventListener('click', (event) => {
+	if (event.target.matches('.pet-card-pets') || event.target.matches('button') ||
+	 	event.target.matches('img') || event.target.matches('p')) {
+		petsKeyPop = event.target.id;
+		createPopUp(data);
+		showPopUpModal();
+	}
+})
+
+window.onclick = function(event) {
+	if (event.target.matches('.header-pets-overlay') && window.innerWidth <= 750) {
+        dropHamburgerMenuPets();
+    }
+    if (event.target.matches('.header-pets-navigation ul li a') && window.innerWidth <= 750) {
+        dropHamburgerMenuPets();
+    }
+    if (event.target.matches(".pop-up-overlay-show") || event.target.matches("#pop-up-close")) {
+        showPopUpModal();
+    }
+}
