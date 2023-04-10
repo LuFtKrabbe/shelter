@@ -76,9 +76,9 @@ function getCurrentPetsKeys() {
 }
 
 function getMaxPage() {
-    if ((window.innerWidth >= 320) && (window.innerWidth < 768)) {return 16};
-    if ((window.innerWidth >= 768) && (window.innerWidth < 1000)) {return 8};
-    if (window.innerWidth >= 1000) {return 6};
+    if ((window.innerWidth >= 320) && (window.innerWidth < 664)) {return 16};
+    if ((window.innerWidth >= 664) && (window.innerWidth <= 1024)) {return 8};
+    if (window.innerWidth > 1024) {return 6};
 }
 
 async function getPets() {
@@ -180,7 +180,7 @@ function createPopUp(data) {
 	POP_UP.innerHTML = 
 	`
 	<button class="button-type-3" id="pop-up-close"></button>
-	<img src="${data[petsKeyPop].img}" alt="${data[petsKeyPop].name}">
+	<img src="${data[petsKeyPop].imgpopup}" alt="${data[petsKeyPop].name}">
 	<div class="pop-up-content" id="pop-up-content">
 		<h2>${data[petsKeyPop].name}</h2>
 		<h3>${data[petsKeyPop].type} - ${data[petsKeyPop].breed}</h3>
@@ -189,9 +189,9 @@ function createPopUp(data) {
 		</p>
 		<ul>
 			<li><span>Age:</span> ${data[petsKeyPop].age}</li>
-			<li><span>Inoculations:</span> ${data[petsKeyPop].inoculations}</li>
-			<li><span>Diseases:</span> ${data[petsKeyPop].diseases}</li>
-			<li><span>Parasites:</span> ${data[petsKeyPop].parasites}</li>
+			<li><span>Inoculations:</span> ${data[petsKeyPop].inoculations.join(", ")}</li>
+			<li><span>Diseases:</span> ${data[petsKeyPop].diseases.join(", ")}</li>
+			<li><span>Parasites:</span> ${data[petsKeyPop].parasites.join(", ")}</li>
 		</ul>
 	</div>
 	`

@@ -54,7 +54,8 @@
         overflow: hidden;
         height: 100%;
         min-width: 500px;
-        border-radius: 9px;
+        border-top-left-radius: 9px;
+        border-bottom-left-radius: 9px;
         @include media-laptop {
             min-width: 350px;
         }
@@ -89,6 +90,7 @@
     h3 {
         margin: 10px 0 0 0;
         @include media-less-tablet {
+            @include font(2.0rem, 130%, 400, normal);
             text-align: center;
         }
     }
@@ -126,7 +128,7 @@
                 color: $color-primary;
                 font-weight: bold; 
                 display: inline-block;
-                width: 2rem;
+                width: 1.5rem;
             }
         }
     }

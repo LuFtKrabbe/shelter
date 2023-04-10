@@ -43,10 +43,10 @@
         justify-content: center;
         align-items: center;
         position: fixed;
-        right: 0;
+        right: -320px;
         top: 0;
         height: 100%;
-        width: 0px;
+        width: 320px;
         z-index: 1;
         background-color: $color-menu-dark;
         transition: all 500ms ease-in-out;
@@ -101,7 +101,6 @@
             }
             @include media-less-tablet {
                 @include font(3.2rem, 160%, 400, normal);
-                transition: all 0ms ease-in-out;
             }
         }
     }
@@ -110,7 +109,7 @@
 .header-navigation-show {
     @include media-less-tablet {
         transition: all 500ms ease-in-out;
-        width: 320px;
+        transform: translateX(-320px);
     }
     ul {
         @include media-less-tablet {

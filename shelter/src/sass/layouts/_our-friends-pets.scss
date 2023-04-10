@@ -55,6 +55,12 @@
     margin: 15px 0 15px 0;
     border-radius: 9px;
     @extend %transition;
+    img {
+        border-top-left-radius: 9px;
+        border-top-right-radius: 9px;
+        height: 270px;
+        width: 270px;
+    }
     p {
         font-family: 'Georgia', serif;
         @include font(2.0rem, 115%, 400, normal);
@@ -109,7 +115,12 @@
 }
 
 .not-active {
-    border-color: $color-dark-s;
-    color: $color-dark-s;
+    border-color: $color-dark-s !important;
+    color: $color-dark-s !important;
+    &:hover {
+        background-color: rgba(0, 0, 0, 0) !important;
+        border-color: $color-dark-s !important;
+        color: $color-dark-s !important;
+    }
     pointer-events: none;
 }
