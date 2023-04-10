@@ -1,3 +1,9 @@
+console.log (
+	`
+    For easy checking the pets' array are represented here:
+	`
+);
+
 function dropHamburgerMenuPets() {
 	document.querySelector(".header-pets-hamburger").classList.toggle("rotate-header-pets-hamburger");
 	document.querySelector(".header-pets-navigation").classList.toggle("header-pets-navigation-show");
